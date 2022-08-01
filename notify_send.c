@@ -1,7 +1,7 @@
-#include <string.h>
-#include <stdlib.h>
+#include <unistd.h>
 #include "scalp.h"
 
-void notify_send(const char *msg) {
-	system(strcat("notify-send ", msg));
+void notify_send(char *msg) {
+	char *args[4] = {"notify-send", "BINGO!", msg, NULL};
+	if(fork() == 0) execvp("notify-send", args);
 }

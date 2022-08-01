@@ -7,7 +7,7 @@ typedef struct {
 	char *text;
 } event;
 
-void notify_send(const char *);
+void notify_send(char *);
 void read_file(event *, const char *); // TODO change signature before use
 
 #endif
