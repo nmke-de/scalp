@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "../scalp.h"
 
 void test_read_file_1() {
@@ -9,6 +10,7 @@ void test_read_file_1() {
 	assert(size == 1);
 	assert(ev[0].when == 0);
 	assert(strcmp(ev[0].text, "Test") == 0);
+	free(ev);
 }
 
 int main() {
