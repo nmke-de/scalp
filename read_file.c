@@ -10,7 +10,7 @@ event *read_file (const char *filename, int *size) {
 	char buf[MAX_EVENT_TEXT];
 	readnum(f, buf);
 	*size = atoi(buf);
-	event *res = malloc(*size);
+	event *res = malloc(*size * sizeof(event));
 	for(int i = 0; i < *size; i++) {
 		readnum(f, buf);
 		res[i].when = atol(buf);
