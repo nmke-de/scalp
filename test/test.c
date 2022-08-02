@@ -6,6 +6,7 @@
 void test_read_file_1() {
 	int size;
 	event *ev = read_file("test1.scalp", &size);
+	assert(size == 1);
 	assert(ev[0].when == 0);
 	assert(strcmp(ev[0].text, "Test") == 0);
 }
