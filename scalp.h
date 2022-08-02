@@ -6,7 +6,7 @@
 
 typedef struct {
 	time_t when;
-	char *text;
+	char text[MAX_EVENT_TEXT];
 } event;
 
 void notify_send(char *);
