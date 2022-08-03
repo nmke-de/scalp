@@ -10,6 +10,6 @@ typedef struct {
 } event;
 
 void notify_send(char *);
-event *read_file(const char *, int *); // TODO change signature before use
+event *read_file(const char *, int *);
 
 #endif
