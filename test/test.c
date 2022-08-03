@@ -20,6 +20,7 @@ void test_read_file_2() {
 	assert(ev[0].when == 0);
 	assert(strcmp(ev[0].text, "Hahatop") == 0);
 	assert(ev[1].when == 1659511309);
+	assert(strlen(ev[1].text) == 4);
 	assert(strcmp(ev[1].text, "asda") == 0);
 	free(ev);
 }
