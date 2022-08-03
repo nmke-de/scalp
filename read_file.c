@@ -8,8 +8,10 @@
 event *read_file (const char *filename, int *size) {
 	FILE *f = fopen(filename, "r");
 	char buf[MAX_EVENT_TEXT];
-	readnum(f, buf);
-	*size = atoi(buf);
+	// Count lines
+	*size = 0;
+	for(char c = fgetc(f); c != EOF; c = fgetc(f)) if(c == '\n') (*size)++;
+	rewind(f);
 	event *res = malloc(*size * sizeof(event));
 	for(int i = 0; i < *size; i++) {
 		readnum(f, buf);
