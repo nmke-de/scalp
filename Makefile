@@ -17,10 +17,7 @@ scalp: $(mobj) $(LIBC)
 test/test: $(tobj) $(LIBC)
 	ld $(LDFLAGS) -o $@ $^
 
-clean: scalp test/test
-	rm scalp
-	rm test/test
-	rm *.o
-	rm test/*.o
+clean:
+	rm -f scalp test/test *.o test/*.o
 
 all: build check clean
