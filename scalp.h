@@ -2,6 +2,10 @@
 #define SCALP_H
 #include <time.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define MAX_EVENT_TEXT 512
 
 typedef struct {
@@ -11,5 +15,9 @@ typedef struct {
 
 void notify_send(char *);
 event *read_file(const char *, int *);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
