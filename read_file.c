@@ -7,6 +7,7 @@
 
 event *read_file (const char *filename, int *size) {
 	FILE *f = fopen(filename, "r");
+	if(!f) exit(1);
 	char buf[MAX_EVENT_TEXT];
 	// Count lines
 	*size = 0;
