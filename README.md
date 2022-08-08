@@ -36,4 +36,6 @@ For example, the following line is a valid entry for scalp:
 
 ``1660035600	Something happens!``
 
+A formal grammar specifying the file format can be found [here](GRAMMAR).
+
 Adding a date in the required format should be easy with a shell command like `echo -e "$(date -d "17 May 2023 4:32pm" "+%s")\tSend birthday regards!" >> foo`, or whatever your desired file is.
