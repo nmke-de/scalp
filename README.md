@@ -29,6 +29,9 @@ Type `make`.
 Run `./scalp [filename]`. If no filename is provided, the program will assume `foo`.
 
 The program will read from the given file that has the same format as the file `foo` in the repository.
+
+## Format specification
+
 Each line contains a number, representing the number of seconds since Unix Epoch (1st Jan 1970 12am UTC), a separating character (usually a tab, never a digit or a newline) and a string of maximally 512 characters, representing the message to be displayed.
 The program will notify the user with the message once the specified time arrives.
 
