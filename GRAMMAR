@@ -1,0 +1,14 @@
+The following context free grammar specifies the file format recognized by scalp.
+
+%%
+
+S       = entry*     # Any number of entries, including zero
+entry   = time sep message endline
+time    = "[0-9]+"   # A number (as a series of digits)
+sep     = "[^\n0-9]" # Any character other than newline or a digit
+message = ".{1,512}" # A string of any character, minimum length 1, maximum length 512
+endline = "\n"       # A linefeed
+
+%%
+
+As an extended regular expression: "(([0-9]+)[^\n0-9](.{1,512})\n)*"
