@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 #include "scalp.h"
 
 int main(int argc, char **argv) {
@@ -11,6 +11,7 @@ int main(int argc, char **argv) {
 		for(int i = 0; i < size; i++) if(t == ev[i].when) notify_send(ev[i].text);
 		sleep(1);
 	}
-	free(ev);
+	// call to free is optimized away anyway.
+	// free(ev);
 	return 0;
 }
