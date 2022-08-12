@@ -15,8 +15,10 @@ All the other calendar programs are too complicated.
 ## Dependencies
 
 - libc, preferrably statically linked (I tested against the [dietlibc](https://www.fefe.de/dietlibc))
-- C compiler
 - `notify-send` (may be included in the package `libnotify`)
+- **Build dependencies**:
+  - C compiler
+  - make (I recommend GNU make)
 
 The program is known to work on Artix Linux. Make sure to put your `libc.a` in `/usr/lib` or change the Makefile.
 
