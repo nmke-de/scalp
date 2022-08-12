@@ -6,7 +6,7 @@ S       = entry*     # Any number of entries, including zero
 entry   = time sep message endline
 time    = "[0-9]+"   # A number (as a series of digits)
 sep     = "[^\n0-9]" # Any character other than newline or a digit
-message = ".{1,512}" # A string of any character, minimum length 1, maximum length 512
+message = ".{1,512}" # A string of any character, min length 1, max length 512
 endline = "\n"       # A linefeed
 
 %%
