@@ -5,7 +5,7 @@
 
 #define readnum (f, buf) ;{int j = 0; for (; j < MAX_EVENT_TEXT && (buf[j] = fgetc(f)) >= '0' && buf[j] <= '9'; j++) {} buf[j] = 0;}
 
-event *read_file (const char *filename, int *size) {
+event *read_file (const char *filename, event *res, int *size) {
 	FILE *f = fopen(filename, "r");
 	if(!f) exit(1);
 	char buf[MAX_EVENT_TEXT];
@@ -13,7 +13,7 @@ event *read_file (const char *filename, int *size) {
 	*size = 0;
 	for(char c = fgetc(f); c != EOF; c = fgetc(f)) if(c == '\n') (*size)++;
 	rewind(f);
-	event *res = malloc(*size * sizeof(event));
+	res = realloc(res, *size * sizeof(event));
 	for(int i = 0; i < *size; i++) {
 		readnum(f, buf);
 		res[i].when = atol(buf);
