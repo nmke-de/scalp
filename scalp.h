@@ -17,6 +17,14 @@ void notify_send(char *);
 event *read_file(const char *, event *, int *);
 void sighandle(int);
 
+struct {
+	event *ev;
+	int size;
+	char *filename;
+} evlist = {
+	NULL, 0, "foo"
+};
+
 #ifdef __cplusplus
 }
 #endif
