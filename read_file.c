@@ -7,7 +7,10 @@
 
 event *read_file (const char *filename, event *res, int *size) {
 	FILE *f = fopen(filename, "r");
-	if(!f) exit(1);
+	if (!f) {
+		fputs("error: scalp: filename missing.\n", stderr);
+		exit(1);
+	}
 	char buf[MAX_EVENT_TEXT];
 	// Count lines
 	*size = 0;
