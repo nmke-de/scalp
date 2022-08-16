@@ -15,6 +15,7 @@ typedef struct {
 
 void notify_send(char *);
 event *read_file(const char *, event *, int *);
+void sighandle(int);
 
 #ifdef __cplusplus
 }
