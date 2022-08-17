@@ -20,4 +20,7 @@ test/test: $(tobj) $(LIBC)
 clean:
 	rm -f scalp test/test *.o test/*.o
 
-all: build check clean
+install: scalp
+	install scalp /usr/bin/
+
+all: build check install clean
