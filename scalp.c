@@ -11,7 +11,6 @@ int main(int argc, char **argv) {
 		else filename = argv[1];
 	}
 	if (argc > 2 && strcmp(filename, "foo") == 0) filename = argv[2];
-	scalpd(filename);
-	//mode(filename);
+	mode(filename);
 	return 0;
 }
