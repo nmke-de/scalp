@@ -24,11 +24,12 @@ The program is known to work on Artix Linux. Make sure to put your `libc.a` in `
 
 ## Build
 
-Type `make`.
+Type `make`. To install, type `make install`.
 
 ## Usage
 
-Run `./scalp [filename]`. If no filename is provided, the program will assume `foo`.
+Run `scalp [filename]`. In order to list all entries, run `scalp list [filename]`.
+If no filename is provided, the program will assume `foo`.
 
 The program will read from the given file that has the same format as the file `foo` in the repository.
 
