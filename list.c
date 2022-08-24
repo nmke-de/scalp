@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "scalp.h"
 
 void list(char *filename) {
@@ -5,5 +6,6 @@ void list(char *filename) {
 	event *ev = read_file(filename, NULL, &size);
 	for (int i = 0; i < size; i++) {
 		// Print each item
+		puts(ev[i].text);
 	}
 }
