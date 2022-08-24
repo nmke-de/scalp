@@ -33,8 +33,8 @@ void test_timecompare() {
 	assert(ev[1].when == 100);
 	assert(ev[2].when == 200);
 	assert(strcmp(ev[0].text, "Comes first") == 0);
-	assert(strcmp(ev[0].text, "Comes second") == 0);
-	assert(strcmp(ev[0].text, "Comes third") == 0);
+	assert(strcmp(ev[1].text, "Comes second") == 0);
+	assert(strcmp(ev[2].text, "Comes third") == 0);
 }
 
 void test_notify_send_1() {
@@ -44,6 +44,7 @@ void test_notify_send_1() {
 int main() {
 	test_read_file_1();
 	test_read_file_2();
+	test_timecompare();
 	test_notify_send_1();
 	char *msg = "All tests successful.\n";
 	write(0, msg, strlen(msg));
