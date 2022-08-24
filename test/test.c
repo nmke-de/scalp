@@ -25,6 +25,18 @@ void test_read_file_2() {
 	free(ev);
 }
 
+void test_timecompare() {
+	int size;
+	event *ev = read_file("test3.scalp", NULL, &size);
+	qsort(ev, size, sizeof(event), timecompare);
+	assert(ev[0].when == 0);
+	assert(ev[1].when == 100);
+	assert(ev[2].when == 200);
+	assert(strcmp(ev[0].text, "Comes first") == 0);
+	assert(strcmp(ev[0].text, "Comes second") == 0);
+	assert(strcmp(ev[0].text, "Comes third") == 0);
+}
+
 void test_notify_send_1() {
 	notify_send("Test.");
 }
