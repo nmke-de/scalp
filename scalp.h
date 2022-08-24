@@ -15,7 +15,9 @@ typedef struct {
 
 void notify_send(char *);
 event *read_file(const char *, event *, int *);
+
 void scalpd(char *);
+void list(char *);
 
 #ifdef __cplusplus
 }

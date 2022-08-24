@@ -1,8 +1,6 @@
 #include <string.h>
 #include "scalp.h"
 
-void list (char *dummy) {}
-
 int main(int argc, char **argv) {
 	char *filename = "foo";
 	void (*mode)(char *) = scalpd;
