@@ -6,6 +6,9 @@ void list(char *filename) {
 	event *ev = read_file(filename, NULL, &size);
 	for (int i = 0; i < size; i++) {
 		// Print each item
-		puts(ev[i].text);
+		fputs(ctime(&(ev[i].when)), stdout);
+		fputc('\t', stdout);
+		fputs(ev[i].text, stdout);
+		fputc('\n', stdout);
 	}
 }
