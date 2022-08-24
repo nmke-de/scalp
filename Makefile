@@ -1,6 +1,6 @@
 
 LIBC = /usr/lib/libc.a
-obj  = read_file.o notify_send.o scalpd.o list.o
+obj  = read_file.o notify_send.o scalpd.o list.o timecompare.o
 mobj = scalp.o $(obj)
 tobj = test/test.o $(obj)
 
