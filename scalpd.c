@@ -7,7 +7,7 @@ static struct {
 	int size;
 	char *filename;
 } evlist = {
-    NULL, 0, "foo"
+	NULL, 0, "foo"
 };
 
 static inline void sig_handle(int signum) {
