@@ -19,6 +19,7 @@ int timecompare(event *, event *);
 
 void scalpd(char *);
 void list(char *);
+void add(char *);
 
 #ifdef __cplusplus
 }
