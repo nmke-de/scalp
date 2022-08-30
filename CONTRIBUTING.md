@@ -24,7 +24,7 @@ Here are a few (soft) guidelines for the code structure:
 
 ### General
 
-Use Unix linefeeds (`\n`) instead of Windows linefeeds (`\n\r`).
+Use Unix linefeeds (`\n`) instead of Windows linefeeds (`\r\n`).
 
 End a file with a trailing newline.
 
@@ -40,7 +40,7 @@ Indent using tabs.
 
 Avoid `*printf` and `*scanf`. To convert from string to number, use `atoi` or similar. To convert from number to string, use [Itoa](https://github.com/nmke-de/Itoa).
 
-[WIP]
+Use the `.clang-format` file as further guideline.
 
 ### Markdown
 
