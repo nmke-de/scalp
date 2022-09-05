@@ -11,3 +11,5 @@ done
 read -p "Message: " msg
 
 printf "$time\t$msg\n" >> $filename
+
+killall -s USR1 scalp
