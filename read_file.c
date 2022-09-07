@@ -29,8 +29,8 @@ event *read_file(const char *filename, event *res, int *size) {
 			int j = 0;
 			for (; j < MAX_EVENT_TEXT && (buf[j] = fgetc(f)) != '\n' && buf[j] != EOF; j++)
 				;
-			for (int k = j; k < MAX_EVENT_TEXT; k++)
-				buf[k] = 0;
+			for (; j < MAX_EVENT_TEXT; j++)
+				buf[j] = 0;
 			strncpy(res[i].text, buf, j);
 		}
 	}
