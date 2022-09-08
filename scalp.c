@@ -9,6 +9,8 @@ int main(int argc, char **argv) {
 			mode = list;
 		else if (strcmp(argv[1], "add") == 0)
 			mode = add;
+		else if (strcmp(argv[1], "update") == 0)
+			mode = trigger_update;
 		else
 			filename = argv[1];
 	}
