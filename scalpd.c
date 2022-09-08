@@ -15,7 +15,7 @@ static inline void sig_handle(int signum) {
 	evlist.ev = read_file(evlist.filename, evlist.ev, &(evlist.size));
 }
 
-#define print(str) write(0, (str), strlen((str)))
+#define print(str) write(2, (str), strlen((str)))
 static inline void sig2_handle(int signum) {
 	for (int i = 0; i < evlist.size; i++) {
 		print(evlist.ev[i].text);
