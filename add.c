@@ -33,7 +33,7 @@ void add(char *filename) {
 		++i;
 	} while (buf[i] != 10);
 	close(*pfd);
-	//Write to file
+	// Write to file
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd < 0)
 		return;
@@ -42,4 +42,6 @@ void add(char *filename) {
 	write(fd, msg, strlen(msg));
 	write(fd, "\n", 1);
 	close(fd);
+	// Update all running instances
+	trigger_update(filename);
 }
