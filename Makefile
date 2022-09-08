@@ -23,4 +23,6 @@ clean:
 install: scalp
 	install scalp /usr/bin/
 
+.PHONY: build check install clean
+
 all: build check install clean
