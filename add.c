@@ -6,7 +6,7 @@
 void add(char *filename) {
 	char *msg = "TESTIFICATE";
 	char *tmp_time = "today 4pm";
-	char buf[523]; // 10 for time, one separator, 512 for message
+	char buf[21];
 	// Spawn child process and open pipe
 	int pfd[2];
 	if (pipe(pfd) < 0)
@@ -28,16 +28,18 @@ void add(char *filename) {
 	fcntl(pfd[0], F_SETFD, FD_CLOEXEC);
 	// Read input from *pfd
 	int i = 0;
-	for (; i < 10; i++)
+	do {
 		read(*pfd, buf + i, 1);
-	buf[i] = '\t';
-	strncpy(buf + 11, msg, strlen(msg) + 11);
+		++i;
+	} while (buf[i] != 10);
 	close(*pfd);
 	//Write to file
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd < 0)
 		return;
-	write(fd, buf, strlen(buf));
+	write(fd, buf, strlen(buf) - 1);
+	write(fd, "\t", 1);
+	write(fd, msg, strlen(msg));
 	write(fd, "\n", 1);
 	close(fd);
 	/*time_t t = time(NULL);
