@@ -42,24 +42,4 @@ void add(char *filename) {
 	write(fd, msg, strlen(msg));
 	write(fd, "\n", 1);
 	close(fd);
-	/*time_t t = time(NULL);
-	char msg[512], tstr[64];
-	// print("Time: ");
-	// input(tstr, 16);
-	struct tm *t_struct = localtime(&t);
-	strcat(tstr, "date +%s -d '");
-	strcat(tstr, inputstring);
-	strcat(tstr, "'");
-	FILE *f = popen(tstr, "r");
-	char *buf[523]; // 10 for time, one separator, 512 for message
-	int i = 0;
-	for(; i < 10; i++)
-		buf[i] = fgetc(f);
-	buf[i] = '\t';
-	fclose(f);
-
-	int fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd == -1)
-		return 1;
-	close(fd);*/
 }
