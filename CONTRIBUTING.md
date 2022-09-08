@@ -44,7 +44,7 @@ Use the `.clang-format` file as further guideline.
 
 ### Markdown
 
-Use English. [WIP]
+Use English.
 
 ### Shell scripts
 
