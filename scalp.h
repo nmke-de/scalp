@@ -15,7 +15,7 @@ typedef struct {
 
 void notify_send(char *);
 event *read_file(const char *, event *, int *);
-int timecompare(event *, event *);
+int timecompare(const event *, const event *);
 
 void scalpd(char *);
 void list(char *);

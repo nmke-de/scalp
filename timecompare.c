@@ -1,5 +1,5 @@
 #include "scalp.h"
 
-int timecompare(event *e1, event *e2) {
+int timecompare(const event *e1, const event *e2) {
 	return e1->when - e2->when;
 }
