@@ -30,14 +30,15 @@ void add(char *filename) {
 	int i = 0;
 	for (; i < 10; i++)
 		read(*pfd, buf + i, 1);
-	buf[++i] = '\t';
-	strncpy(buf + (++i), msg, strlen(msg));
+	buf[i] = '\t';
+	strncpy(buf + 11, msg, strlen(msg) + 11);
 	close(*pfd);
 	//Write to file
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd < 0)
 		return;
-	write(fd, buf, strlen(msg));
+	write(fd, buf, strlen(buf));
+	write(fd, "\n", 1);
 	close(fd);
 	/*time_t t = time(NULL);
 	char msg[512], tstr[64];
