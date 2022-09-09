@@ -28,7 +28,12 @@ Type `make`. To install, type `make install`.
 
 ## Usage
 
-Run `scalp [filename]`. In order to list all entries, run `scalp list [filename]`.
+Run `scalp [filename]` to receive notifications. Other than that,
+
+- `scalp add [filename]` will start a prompt to add a new entry.
+- `scalp list [filename]` will provide a list of known entries.
+- `scalp update` will triger an update on all running instances of scalp, if any.
+
 If no filename is provided, the program will assume `foo`.
 
 The program will read from the given file that has the same format as the file `foo` in the repository.
