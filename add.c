@@ -7,14 +7,15 @@
 #define input(var, limit) read(1, (var), (limit))
 
 void add(char *filename) {
-	char msg[512] = "TESTIFICATE";
-	char tmp_time[64] = "";
+	char msg[512];
+	char tmp_time[64];
 	// Read time from stdin. Repeat if format is bad.
-	char buf[21] = "";
+	char buf[21];
 	int pfd[2];
 	do {
 		print("Time: ");
-		input(tmp_time, 64);
+		int rl = input(tmp_time, 64);
+		tmp_time[rl - 1] = 0;
 		// Spawn child process and open pipe
 		if (pipe(pfd) < 0)
 			return;
@@ -43,8 +44,7 @@ void add(char *filename) {
 	} while (*buf == 0);
 	// Read message from stdin
 	print("Message: ");
-	int rl = input(msg, 512);
-	msg[rl - 1] = 0;
+	input(msg, 512);
 	// Write to file
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd < 0)
@@ -52,7 +52,6 @@ void add(char *filename) {
 	write(fd, buf, strlen(buf) - 1);
 	write(fd, "\t", 1);
 	write(fd, msg, strlen(msg));
-	write(fd, "\n", 1);
 	close(fd);
 	// Update all running instances
 	trigger_update(filename);
