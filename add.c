@@ -39,7 +39,7 @@ void add(char *filename) {
 		do {
 			read(*pfd, buf + i, 1);
 			++i;
-		} while (buf[i] != 10);
+		} while (buf[i] != -1);
 		close(*pfd);
 	} while (*buf == 0);
 	// Read message from stdin
