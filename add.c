@@ -3,9 +3,12 @@
 #include <fcntl.h>
 #include "scalp.h"
 
+#define print(str) write(0, (str), strlen((str)))
+#define input(var, limit) read(1, (var), (limit))
+
 void add(char *filename) {
-	char *msg = "TESTIFICATE";
-	char *tmp_time = "today 4pm";
+	char msg[512] = "TESTIFICATE";
+	char tmp_time[64] = "today 4pm";
 	char buf[21];
 	// Spawn child process and open pipe
 	int pfd[2];
@@ -33,6 +36,10 @@ void add(char *filename) {
 		++i;
 	} while (buf[i] != 10);
 	close(*pfd);
+	// Read message from stdin
+	print("Message: ");
+	int rl = input(msg, 512);
+	msg[rl - 1] = 0;
 	// Write to file
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd < 0)
