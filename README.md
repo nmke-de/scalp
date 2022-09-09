@@ -2,7 +2,7 @@
 
 **scalp** is a simple calendar program that actually only notifies you on certain events. Some people will not call this a calendar program, but a reminder / agenda / todo-list program.
 
-Currently in early development.
+Currently still in development.
 
 ## But why?
 
@@ -16,6 +16,7 @@ All the other calendar programs are too complicated.
 
 - libc, preferrably statically linked (I tested against the [dietlibc](https://www.fefe.de/dietlibc))
 - `notify-send` (may be included in the package `libnotify`)
+- `date`, a utility which usually comes with GNU coreutils, busybox, sbase or whatever userspace you fancy.
 - **Build dependencies**:
   - C compiler
   - make (I recommend GNU make)
