@@ -21,6 +21,7 @@ void scalpd(char *);
 void list(char *);
 void add(char *);
 void trigger_update(char *);
+void del(char *);
 
 #ifdef __cplusplus
 }

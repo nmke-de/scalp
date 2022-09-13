@@ -11,6 +11,8 @@ int main(int argc, char **argv) {
 			mode = add;
 		else if (strcmp(argv[1], "update") == 0)
 			mode = trigger_update;
+		else if (strcmp(argv[1], "del") == 0)
+			mode = del;
 		else
 			filename = argv[1];
 	}
