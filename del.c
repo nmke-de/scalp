@@ -2,6 +2,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include "Itoa/itoa.h"
 #include "scalp.h"
 
 #define print(str) write(0, (str), strlen((str)))
@@ -13,7 +14,10 @@ void del(char *filename) {
 	event *ev = read_file(filename, NULL, &size);
 	qsort(ev, size, sizeof(event), timecompare);
 	for (int i = 0; i < size; i++) {
-		print(ctime(ev[i].when));
+		print(itoa(i + 1, 10));
+		print("\t");
+		char *tstr = ctime(&(ev[i].when));
+		write(0, tstr, strlen(tstr) - 1);
 		print("\t");
 		print(ev[i].text);
 		print("\n");
@@ -28,7 +32,11 @@ void del(char *filename) {
 	for(int i = 0; i < size; i++) {
 		if (i == del_i - 1)
 			continue;
-		//write(fd, )
+		char *tstr = itoa(ev[i].when, 10);
+		write(fd, tstr, strlen(tstr));
+		write(fd, "\t", 1);
+		write(fd, ev[i].text, strlen(ev[i].text));
+		write(fd, "\n", 1);
 	}
 	close(fd);
 	trigger_update(filename);
