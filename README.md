@@ -15,6 +15,7 @@ All the other calendar programs are too complicated.
 ## Dependencies
 
 - libc, preferrably statically linked (I tested against the [dietlibc](https://www.fefe.de/dietlibc))
+- [Itoa](https://github.com/nmke-de/Itoa), which comes included as a git submodule in this repository.
 - `notify-send` (may be included in the package `libnotify`)
 - `date`, a utility which usually comes with GNU coreutils, busybox, sbase or whatever userspace you fancy.
 - **Build dependencies**:
@@ -25,6 +26,8 @@ The program is known to work on Artix Linux. Make sure to put your `libc.a` in `
 
 ## Build
 
+In order to fetch Itoa, type `git submodule update --remote` first.
+
 Type `make`. To install, type `make install`.
 
 ## Usage
@@ -32,6 +35,7 @@ Type `make`. To install, type `make install`.
 Run `scalp [filename]` to receive notifications. Other than that,
 
 - `scalp add [filename]` will start a prompt to add a new entry.
+- `scalp del [filename]` will start a prompt to delete an existing entry.
 - `scalp list [filename]` will provide a list of known entries.
 - `scalp update` will triger an update on all running instances of scalp, if any.
 
