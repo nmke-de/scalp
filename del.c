@@ -14,15 +14,16 @@ void del(char *filename) {
 	event *ev = read_file(filename, NULL, &size);
 	qsort(ev, size, sizeof(event), timecompare);
 	for (int i = 0; i < size; i++) {
-		print(itoa(i + 1, 10));
+		char *tmp = itoa(i + 1, 10);
+		print(tmp);
 		print("\t");
-		char *tstr = ctime(&(ev[i].when));
-		write(0, tstr, strlen(tstr) - 1);
+		tmp = ctime(&(ev[i].when));
+		write(0, tmp, strlen(tmp) - 1);
 		print("\t");
 		print(ev[i].text);
 		print("\n");
 	}
-	print("Which event? ");
+	print("Which event do you want to delete? ");
 	input(buf, 21);
 	// Index of item that is to be deleted.
 	int del_i = atoi(buf);
