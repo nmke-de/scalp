@@ -22,6 +22,7 @@ test/test: $(tobj) $(LIBC)
 
 clean:
 	rm -f scalp test/test *.o test/*.o
+	make -C Itoa -f Makefile clean
 
 install: scalp
 	install scalp /usr/bin/
