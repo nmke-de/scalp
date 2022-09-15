@@ -1,6 +1,6 @@
 
 LIBC = /usr/lib/libc.a
-obj  = read_file.o notify_send.o scalpd.o list.o timecompare.o add.o trigger_update.o del.o
+obj  = read_file.o notify_send.o scalpd.o list.o timecompare.o add.o trigger_update.o del.o Itoa/itoa.o
 mobj = scalp.o $(obj)
 tobj = test/test.o $(obj)
 
@@ -10,6 +10,9 @@ build: scalp
 
 check: test/test
 	@cd test/ ; ./test
+
+Itoa/itoa.o:
+	make -C Itoa -f Makefile
 
 scalp: $(mobj) $(LIBC)
 	ld $(LDFLAGS) -o $@ $^
