@@ -32,7 +32,7 @@ void scalpd(char *filename) {
 	for (;; t = time(NULL)) {
 		for (int i = 0; i < evlist.size; i++)
 			if (t == evlist.ev[i].when)
-				notify_send(evlist.ev[i].text);
+				notify_send("NOW!", evlist.ev[i].text);
 		sleep(1);
 	}
 }

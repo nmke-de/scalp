@@ -38,7 +38,7 @@ void test_timecompare() {
 }
 
 void test_notify_send_1() {
-	notify_send("Test.");
+	notify_send("Title.", "Test.");
 }
 
 int main() {
