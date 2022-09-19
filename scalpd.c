@@ -30,9 +30,16 @@ void scalpd(char *filename) {
 	signal(SIGUSR1, sig_handle);
 	signal(SIGUSR2, sig2_handle);
 	for (;; t = time(NULL)) {
-		for (int i = 0; i < evlist.size; i++)
+		for (int i = 0; i < evlist.size; i++) {
 			if (t == evlist.ev[i].when)
 				notify_send("NOW!", evlist.ev[i].text);
+			else if (t == evlist.ev[i].when - 600)
+				notify_send("In ten minutes!", evlist.ev[i].text);
+			else if (t == evlist.ev[i].when - 3600)
+				notify_send("In an hour!", evlist.ev[i].text);
+			else if (t == evlist.ev[i].when - 86400)
+				notify_send("Tomorrow!", evlist.ev[i].text);
+		}
 		sleep(1);
 	}
 }
