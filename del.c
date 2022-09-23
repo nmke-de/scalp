@@ -5,14 +5,21 @@
 #include "Itoa/itoa.h"
 #include "scalp.h"
 
+// Macros to make code more managable
 #define print(str) write(0, (str), strlen((str)))
 #define input(var, limit) read(1, (var), (limit))
 
+/*
+routine to remove an entry from filename.
+*/
 void del(char *filename) {
 	int size = 0;
 	char buf[21];
+	// Read file
 	event *ev = read_file(filename, NULL, &size);
+	// Sort entries
 	qsort(ev, size, sizeof(event), timecompare);
+	// Print a list of all entries to output
 	for (int i = 0; i < size; i++) {
 		char *tmp = itoa(i + 1, 10);
 		print(tmp);
@@ -23,14 +30,16 @@ void del(char *filename) {
 		print(ev[i].text);
 		print("\n");
 	}
+	// User input
 	print("Which event do you want to delete? ");
 	input(buf, 21);
-	// Index of item that is to be deleted.
+	// Index of item that is to be deleted (starting with 1).
 	int del_i = atoi(buf);
+	// Write to file
 	int fd = open(filename, O_WRONLY | O_TRUNC);
 	if (fd < 0)
 		return;
-	for(int i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++) {
 		if (i == del_i - 1)
 			continue;
 		char *tstr = itoa(ev[i].when, 10);
@@ -40,5 +49,6 @@ void del(char *filename) {
 		write(fd, "\n", 1);
 	}
 	close(fd);
+	// Update all running instances
 	trigger_update(filename);
 }

@@ -1,8 +1,12 @@
 #include <string.h>
 #include "scalp.h"
 
+/*
+Entry point of the program (duh.)
+*/
 int main(int argc, char **argv) {
 	char *filename = "foo";
+	// argparsing
 	void (*mode)(char *) = scalpd;
 	if (argc > 1) {
 		if (strcmp(argv[1], "list") == 0)
@@ -18,6 +22,7 @@ int main(int argc, char **argv) {
 	}
 	if (argc > 2 && strcmp(filename, "foo") == 0)
 		filename = argv[2];
+	// Goto a routine according to the given subcommand.
 	mode(filename);
 	return 0;
 }

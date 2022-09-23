@@ -3,9 +3,13 @@
 #include <fcntl.h>
 #include "scalp.h"
 
+// Macros to make code more managable
 #define print(str) write(0, (str), strlen((str)))
 #define input(var, limit) read(1, (var), (limit))
 
+/*
+routine to add an entry to filename.
+*/
 void add(char *filename) {
 	char msg[512];
 	char tmp_time[64];
@@ -13,6 +17,7 @@ void add(char *filename) {
 	char buf[21];
 	int pfd[2];
 	do {
+		// Get user input for time
 		print("Time: ");
 		int rl = input(tmp_time, 64);
 		tmp_time[rl - 1] = 0;
