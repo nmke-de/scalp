@@ -1,0 +1,44 @@
+.TH SCALP 1
+.SH NAME
+scalp \- a Simple CALendar Program that actually only notifies you on certain events.
+(a.k.a. todolist)
+.SH SYNOPSIS
+.B scalp
+.OP FILENAME
+.PP
+.B scalp add
+.OP FILENAME
+.PP
+.B scalp del
+.OP FILENAME
+.PP
+.B scalp list
+.OP FILENAME
+.PP
+.B scalp update
+.OP FILENAME
+.SH DESCRIPTION
+.B scalp
+is a simple calendar program that actually only notifies you on certain events.
+Some people will not call this a calendar program, but a reminder / agenda /
+todo-list program.
+.PP
+All the other calendar programs are too complicated, both in source code and in usage.
+That's why scalp came in to being.
+.PP
+Beware that scalp is still in development.
+.SH SUBCOMMANDS
+.TP
+Running scalp without any subcommands will start the notification daemon. The default filename is \fIfoo\fP.
+.TP
+.B add
+will prompt the user to enter a time and a message. The message must not be longer than 512 characters long, and the time format is described in \fIdate\fP(1).
+.TP
+.B del
+will prompt the user to give a number, which corresponds to the entry that the user wants to delete.
+.TP
+.B list
+will list all entries in a given file.
+.TP
+.B update
+will update all running instances of scalp. This means that all instances of scalp running in daemon mode will reload their source file and then continue.
