@@ -26,6 +26,7 @@ clean:
 
 install: scalp
 	install scalp /usr/bin/
+	install scalp.1 /usr/share/man/man1/
 
 .PHONY: build check install clean
 
