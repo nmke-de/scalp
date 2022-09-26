@@ -16,10 +16,11 @@ void add(char *filename) {
 	// Read time from stdin. Repeat if format is bad.
 	char buf[21];
 	int pfd[2];
+	int rl;
 	do {
 		// Get user input for time
 		print("Time: ");
-		int rl = input(tmp_time, 64);
+		rl = input(tmp_time, 64);
 		tmp_time[rl - 1] = 0;
 		// Spawn child process and open pipe
 		if (pipe(pfd) < 0)
@@ -49,7 +50,7 @@ void add(char *filename) {
 	} while (*buf == 0);
 	// Read message from stdin
 	print("Message: ");
-	int rl = input(msg, 512);
+	rl = input(msg, 512);
 	// Check for overflow
 	if (rl == 512) {
 		msg[rl - 1] = 0;
