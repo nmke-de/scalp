@@ -49,7 +49,17 @@ void add(char *filename) {
 	} while (*buf == 0);
 	// Read message from stdin
 	print("Message: ");
-	input(msg, 512);
+	int rl = input(msg, 512);
+	// Check for overflow
+	if (rl == 512) {
+		msg[rl - 1] = 0;
+		msg[rl - 2] = '\n';
+		// Remove characters that are still in the input buffer
+		char junk[16];
+		do {
+			rl = input(junk, 16);
+		} while (junk[rl - 1] != '\n');
+	}
 	// Write to file
 	int fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd < 0)
