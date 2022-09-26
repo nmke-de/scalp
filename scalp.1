@@ -28,8 +28,10 @@ That's why scalp came in to being.
 .PP
 Beware that scalp is still in development.
 .SH SUBCOMMANDS
-.TP
-Running scalp without any subcommands will start the notification daemon. The default filename is \fIfoo\fP.
+.PP
+Running scalp without any subcommands will start the notification daemon.
+The program will notify the user with a message specified in the file once the specified
+time arrives. The default filename is \fIfoo\fP.
 .TP
 .B add
 will prompt the user to enter a time and a message. The message must not be longer than 512 characters long, and the time format is described in \fIdate\fP(1).
@@ -42,3 +44,14 @@ will list all entries in a given file.
 .TP
 .B update
 will update all running instances of scalp. This means that all instances of scalp running in daemon mode will reload their source file and then continue.
+.SH FILE FORMAT
+Each line contains a number, representing the number of seconds since Unix Epoch
+(1st Jan 1970 12am UTC), a separating character (usually a tab, never a digit or a newline)
+and a string of maximally 512 characters, representing the message to be displayed.
+.TP
+For example, the following line is a valid entry for scalp:
+1660035600\	Something happens!!
+.PP
+The file must end on a newline.
+.SH FURTHER READING
+More information can be found on \fIhttps://github.com/nmke-de/scalp\fP.
