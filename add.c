@@ -38,7 +38,7 @@ void add(char *filename) {
 			close(pfd[1]);
 			execvp("date", argv);
 			// Only executed if something is wrong with `date`.
-			write(1, "-", 1);
+			write(1, "W", 1);
 			return;
 		}
 		close(pfd[1]);
@@ -50,7 +50,7 @@ void add(char *filename) {
 			++i;
 		} while (buf[i] != -1);
 		close(*pfd);
-		if (*buf == '-') {
+		if (*buf == 'W') {
 			// Only executed if something is wrong with `date`.
 			print("scalp received an error. Are you sure that the `date` utility is properly installed?\n");
 			return;
