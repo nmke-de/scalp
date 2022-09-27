@@ -3,20 +3,25 @@
 scalp \- a Simple CALendar Program that actually only notifies you on certain events.
 (a.k.a. todolist)
 .SH SYNOPSIS
-.B scalp
+.SY scalp
 .OP FILENAME
-.PP
-.B scalp add
+.YS
+.SY scalp
+add
 .OP FILENAME
-.PP
-.B scalp del
+.YS
+.SY scalp
+del
 .OP FILENAME
-.PP
-.B scalp list
+.YS
+.SY scalp
+list
 .OP FILENAME
-.PP
-.B scalp update
+.YS
+.SY scalp
+update
 .OP FILENAME
+.YS
 .SH DESCRIPTION
 .B scalp
 is a simple calendar program that actually only notifies you on certain events.
@@ -29,7 +34,7 @@ That's why scalp came in to being.
 Beware that scalp is still in development.
 .SH SUBCOMMANDS
 .PP
-Running scalp without any subcommands will start the notification daemon.
+Running scalp without any subcommands will start the daemon.
 The program will notify the user with a message specified in the file once the specified
 time arrives. The default filename is \fIfoo\fP.
 .TP
@@ -48,10 +53,14 @@ will update all running instances of scalp. This means that all instances of sca
 Each line contains a number, representing the number of seconds since Unix Epoch
 (1st Jan 1970 12am UTC), a separating character (usually a tab, never a digit or a newline)
 and a string of maximally 512 characters, representing the message to be displayed.
-.TP
+.PP
 For example, the following line is a valid entry for scalp:
-1660035600\	Something happens!!
+.EX
+1660035600	Something happens!!
+.EE
 .PP
 The file must end on a newline.
 .SH FURTHER READING
-More information can be found on \fIhttps://github.com/nmke-de/scalp\fP.
+More information can be found on 
+.UR https://github.com/nmke-de/scalp
+.UE .
