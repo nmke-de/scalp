@@ -43,9 +43,10 @@ void del(char *filename) {
 		} while (junk[rl - 1] != '\n');
 	}
 	// Index of item that is to be deleted (starting with 1).
-	int del_i = atoi(buf);
+	int del_i[1];
+	del_i[0] = atoi(buf);
 	// Write to file
-	rm(filename, ev, size, del_i - 1);
+	rm(filename, ev, size, del_i - 1, 1);
 	// Update all running instances
 	trigger_update(filename);
 }
