@@ -20,7 +20,6 @@ list
 .YS
 .SY scalp
 update
-.OP FILENAME
 .YS
 .SH DESCRIPTION
 .B scalp
@@ -49,6 +48,49 @@ will list all entries in a given file.
 .TP
 .B update
 will update all running instances of scalp. This means that all instances of scalp running in daemon mode will reload their source file and then continue.
+.SH USAGE EXAMPLES
+.TP
+It is recommended to start the scalp daemon on startup. For example, put this line in your \fI.bashrc\fP:
+.EX
+nohup scalp ~/.cache/calendar.scalp &
+.EE
+.TP
+Here is an example of adding a new entry:
+.EX
+scalp add ~/.cache/calendar.scalp
+Time: next Friday 6pm
+Message: Homegroup at home!
+.EE
+.TP
+Here is another one, for another file:
+.EX
+$ scalp add foo
+Time: 2023-07-03
+Message: Marc's birthday!
+.EE
+.TP
+This shows the deletion of the entry of the homegroup entry (date may vary):
+.EX
+$ scalp del ~/.cache/calendar.scalp
+1	Sat Sep 17 11:00:00 2022	Dad's birthday
+2	Tue Sep 20 14:00:00 2022	Somebody's gonna roll me.
+3	Wed Sep 21 07:21:21 2022	Country Road, take me home!
+4	Fri Sep 23 18:00:00 2022	Homegroup at home!
+Which event do you want to delete? 4
+.EE
+.TP
+Here is an example of scalp list:
+.EX
+$ scalp list ~/.cache/calendar.scalp
+Sat Sep 17 11:00:00 2022	Dad's birthday
+Tue Sep 20 14:00:00 2022	Somebody's gonna roll me.
+Wed Sep 21 07:21:21 2022	Country Road, take me home!
+.EE
+.TP
+To update all instances of scalp (which is only necessary if you edit any files manually), do this:
+.EX
+$ scalp update
+.EE
 .SH FILE FORMAT
 Each line contains a number, representing the number of seconds since Unix Epoch
 (1st Jan 1970 12am UTC), a separating character (usually a tab, never a digit or a newline)
