@@ -70,13 +70,7 @@ void add(char *filename) {
 		} while (junk[rl - 1] != '\n');
 	}
 	// Write to file
-	int fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd < 0)
-		return;
-	write(fd, buf, strlen(buf) - 1);
-	write(fd, "\t", 1);
-	write(fd, msg, strlen(msg));
-	close(fd);
+	append(filename, buf, strlen(buf) - 1, msg, strlen(msg) - 1);
 	// Update all running instances
 	trigger_update(filename);
 }
