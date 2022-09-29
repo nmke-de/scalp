@@ -9,7 +9,7 @@
 #define input(var, limit) read(1, (var), (limit))
 
 /*
-Prune removes all entries in filename which are older than now.
+removes all entries in filename which are older than now.
 */
 void prune(char *filename) {
 	int size = 0, ptr = 0;
