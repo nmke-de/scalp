@@ -2,11 +2,12 @@
 #include <string.h>
 #include <fcntl.h>
 #include "Itoa/itoa.h"
+#include "scalp.h"
 
-void remove(char *filename, int del_i) {
+int rm(char *filename, event *ev, int size, int del_i) {
 	int fd = open(filename, O_WRONLY | O_TRUNC);
 	if (fd < 0)
-		return;
+		return 1;
 	for (int i = 0; i < size; i++) {
 		if (i == del_i - 1)
 			continue;
@@ -17,4 +18,5 @@ void remove(char *filename, int del_i) {
 		write(fd, "\n", 1);
 	}
 	close(fd);
+	return 0;
 }
