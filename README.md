@@ -59,3 +59,7 @@ Adding a date in the required format should be easy with a shell command like `e
 ## Contributing
 
 Take a look at [the contributing guidelines](CONTRIBUTING.md). If you have a question, feel free to ask in [the issues tab](https://github.com/nmke-de/scalp/issues).
+
+## Acknowledgement
+
+[CPtPoesn](https://github.com/CPtPoesn) for taking a look at the man page and making a suggestion for improvement.
