@@ -25,6 +25,7 @@ void list(char *);
 void add(char *);
 void trigger_update(char *);
 void del(char *);
+void prune(char *);
 
 #ifdef __cplusplus
 }

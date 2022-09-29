@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+#include <alloca.h>
 #include "scalp.h"
 
 // Macros to make code more managable
@@ -24,5 +25,5 @@ void prune(char *filename) {
 	// Remove all entries
 	rm(filename, ev, size, del_i, ptr);
 	// Update all running instances
-	trigger_update();
+	trigger_update(filename);
 }
