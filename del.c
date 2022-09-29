@@ -45,19 +45,7 @@ void del(char *filename) {
 	// Index of item that is to be deleted (starting with 1).
 	int del_i = atoi(buf);
 	// Write to file
-	int fd = open(filename, O_WRONLY | O_TRUNC);
-	if (fd < 0)
-		return;
-	for (int i = 0; i < size; i++) {
-		if (i == del_i - 1)
-			continue;
-		char *tstr = itoa(ev[i].when, 10);
-		write(fd, tstr, strlen(tstr));
-		write(fd, "\t", 1);
-		write(fd, ev[i].text, strlen(ev[i].text));
-		write(fd, "\n", 1);
-	}
-	close(fd);
+	rm(filename, ev, size, del_i);
 	// Update all running instances
 	trigger_update(filename);
 }
