@@ -19,6 +19,10 @@ list
 .OP FILENAME
 .YS
 .SY scalp
+prune
+.OP FILENAME
+.YS
+.SY scalp
 update
 .YS
 .SH DESCRIPTION
@@ -45,6 +49,9 @@ will prompt the user to give a number, which corresponds to the entry that the u
 .TP
 .B list
 will list all entries in a given file.
+.TP
+.B prune
+will remove all entries older than now.
 .TP
 .B update
 will update all running instances of scalp. This means that all instances of scalp running in daemon mode will reload their source file and then continue.
@@ -85,6 +92,11 @@ $ scalp list ~/.cache/calendar.scalp
 Sat Sep 17 11:00:00 2022	Dad's birthday
 Tue Sep 20 14:00:00 2022	Somebody's gonna roll me.
 Wed Sep 21 07:21:21 2022	Country Road, take me home!
+.EE
+.TP
+To remove old outdated entries, type this:
+.EX
+$ scalp prune foo
 .EE
 .TP
 To update all instances of scalp (which is only necessary if you edit any files manually), do this:
