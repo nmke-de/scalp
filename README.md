@@ -36,6 +36,7 @@ Run `scalp [filename]` to receive notifications. Other than that,
 
 - `scalp add [filename]` will start a prompt to add a new entry.
 - `scalp del [filename]` will start a prompt to delete an existing entry.
+- `scalp help` will show a help message.
 - `scalp list [filename]` will provide a list of known entries.
 - `scalp prune [filename]` will remove all entries older than now.
 - `scalp update` will triger an update on all running instances of scalp, if any.
