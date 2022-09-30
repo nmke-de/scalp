@@ -8,14 +8,15 @@
 shows help message
 */
 void help(char *filename) {
-	print("scalp - a Simple CALendar Program\n");
-	print("see also: man 1 scalp\n");
-	print("Usage: scalp [SUBCOMMAND] [FILENAME]\n");
-	print("Running scalp without subcommand starts the daemon to notify you.\n");
-	print("\tadd\tadd a new entry\n");
-	print("\tdel\tdelete an entry\n");
-	print("\thelp\tshow this message\n");
-	print("\tlist\tlist all entries\n");
-	print("\tprune\tremove all old entries\n");
-	print("\tupdate\tupdate all running instances\n");
+	static const char *helpmsg = "scalp - a Simple CALendar Program\n\
+see also: man 1 scalp\n\
+Usage: scalp [SUBCOMMAND] [FILENAME]\n\
+Running scalp without subcommand starts the daemon to notify you.\n\
+	add\tadd a new entry\n\
+	del\tdelete an entry\n\
+	help\tshow this message\n\
+	list\tlist all entries\n\
+	prune\tremove all old entries\n\
+	update\tupdate all running instances\n";
+	print(helpmsg);
 }
