@@ -12,23 +12,17 @@ int rm(char *filename, event *ev, int size, int *del_i, int del_i_size) {
 	if (fd < 0)
 		return 1;
 	for (int i = 0; i < size; i++) {
-	start:
 		for (int j = 0; j < del_i_size; j++) {
-			if (i == del_i[j]) {
-				++i;
-				if (i >= size)
-					goto end;
-				else
-					goto start;
-			}
+			if (i == del_i[j])
+				goto next;
 		}
 		char *tstr = itoa(ev[i].when, 10);
 		write(fd, tstr, strlen(tstr));
 		write(fd, "\t", 1);
 		write(fd, ev[i].text, strlen(ev[i].text));
 		write(fd, "\n", 1);
+	next:
 	}
-end:
 	close(fd);
 	return 0;
 }
