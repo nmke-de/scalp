@@ -47,6 +47,8 @@ int read_time(char *buf, int max_bufsize) {
 			++i;
 		} while (buf[i] != -1 && i < max_bufsize);
 		close(*pfd);
+		if (i == max_bufsize)
+			*buf = 'W';
 		if (*buf == 'W') {
 			// Only executed if something is wrong with `date`.
 			print("scalp received an error. Are you sure that the `date` utility is properly installed?\n");
