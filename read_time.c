@@ -21,12 +21,12 @@ int read_time(char *buf, int max_bufsize) {
 		tmp_time[rl - 1] = 0;
 		// Spawn child process and open pipe
 		if (pipe(pfd) < 0)
-			return;
+			return 1;
 		pid_t pid = fork();
 		if (pid < 0) {
 			close(pfd[0]);
 			close(pfd[1]);
-			return;
+			return 1;
 		} else if (pid == 0) {
 			char *argv[] = {"date", "+%s", "-d", tmp_time, 0};
 			close(pfd[0]);
@@ -36,7 +36,7 @@ int read_time(char *buf, int max_bufsize) {
 			execvp("date", argv);
 			// Only executed if something is wrong with `date`.
 			write(1, "W", 1);
-			return;
+			return 1;
 		}
 		close(pfd[1]);
 		fcntl(pfd[0], F_SETFD, FD_CLOEXEC);
@@ -47,8 +47,6 @@ int read_time(char *buf, int max_bufsize) {
 			++i;
 		} while (buf[i] != -1 && i < max_bufsize);
 		close(*pfd);
-		if (i == max_bufsize)
-			*buf = 'W';
 		if (*buf == 'W') {
 			// Only executed if something is wrong with `date`.
 			print("scalp received an error. Are you sure that the `date` utility is properly installed?\n");

@@ -18,6 +18,7 @@ event *read_file(const char *, event *, int *);
 int timecompare(const void *, const void *);
 int append(char *, char *, int, char *, int);
 int rm(char *, event *, int, int *, int);
+int read_time(char *, int);
 
 // Different modes (see main() in scalp.c)
 void scalpd(char *);
