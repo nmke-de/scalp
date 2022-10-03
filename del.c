@@ -31,17 +31,7 @@ void del(char *filename) {
 		print("\n");
 	}
 	// User input
-	print("Which event do you want to delete? ");
-	int rl = input(buf, 21);
-	// Check for overflow
-	if (rl == 21) {
-		buf[rl - 1] = 0;
-		// Remove characters that are still in the input buffer
-		char junk[16];
-		do {
-			rl = input(junk, 16);
-		} while (junk[rl - 1] != '\n');
-	}
+	prompt(buf, 21, "Which event do you want to delete? ");
 	// Index of item that is to be deleted (starting with 1).
 	int del_i[1];
 	del_i[0] = atoi(buf) - 1;
