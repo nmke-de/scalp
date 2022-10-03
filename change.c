@@ -21,8 +21,8 @@ void change(char *filename) {
 	if (rl == 512)
 		msg[rl - 2] = '\n';
 	// Write updates
-	ev[i].when = atol(buf);
-	strncpy(ev[i].text, msg, rl);
+	ev[change_i].when = atol(buf);
+	strncpy(ev[change_i].text, msg, rl);
 	rm(filename, ev, size, NULL, 0);
 	// Update all running instances
 	trigger_update(filename);
