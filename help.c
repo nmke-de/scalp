@@ -1,8 +1,4 @@
-#include <unistd.h>
-#include <string.h>
-
-// Macro to make code more managable
-#define print(str) write(0, (str), strlen((str)))
+#include "scalp.h"
 
 /*
 shows help message

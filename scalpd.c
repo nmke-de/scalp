@@ -22,13 +22,13 @@ static inline void sig_handle(int signum) {
 /*
 Signal handler for USR2. Used for debugging. If you are a developer, feel free to change.
 
-The print macro is just a little bit convenience.
+The log macro is just a little bit convenience.
 */
-#define print(str) write(2, (str), strlen((str)))
+#define log(str) write(2, (str), strlen((str)))
 static inline void sig2_handle(int signum) {
 	for (int i = 0; i < evlist.size; i++) {
-		print(evlist.ev[i].text);
-		print("\n");
+		log(evlist.ev[i].text);
+		log("\n");
 	}
 }
 

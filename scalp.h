@@ -1,6 +1,7 @@
 #ifndef SCALP_H
 #define SCALP_H
 #include <time.h>
+#include <unistd.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,6 +30,10 @@ void trigger_update(char *);
 void del(char *);
 void prune(char *);
 void help(char *);
+
+// Macros to make code more managable
+#define print(str) write(0, (str), strlen((str)))
+#define input(var, limit) read(1, (var), (limit))
 
 #ifdef __cplusplus
 }

@@ -4,10 +4,6 @@
 #include <alloca.h>
 #include "scalp.h"
 
-// Macros to make code more managable
-#define print(str) write(0, (str), strlen((str)))
-#define input(var, limit) read(1, (var), (limit))
-
 // Support cproc alloca
 #ifndef alloca
 #define alloca __builtin_alloca

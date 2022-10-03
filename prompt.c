@@ -2,10 +2,6 @@
 #include <string.h>
 #include "scalp.h"
 
-// Macros to make code more managable
-#define print(str) write(0, (str), strlen((str)))
-#define input(var, limit) read(1, (var), (limit))
-
 /*
 Prompts the user with msg to input text in to a buffer buf with bufsize length. Returns the length of input.
 */
