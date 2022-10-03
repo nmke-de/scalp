@@ -2,6 +2,7 @@
 #define SCALP_H
 #include <time.h>
 #include <unistd.h>
+#include <string.h>
 
 #ifdef __cplusplus
 extern "C" {
