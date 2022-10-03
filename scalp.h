@@ -19,6 +19,7 @@ int timecompare(const void *, const void *);
 int append(char *, char *, int, char *, int);
 int rm(char *, event *, int, int *, int);
 int read_time(char *, int);
+int prompt(char*, int, char *);
 
 // Different modes (see main() in scalp.c)
 void scalpd(char *);
