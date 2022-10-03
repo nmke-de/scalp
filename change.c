@@ -12,7 +12,8 @@ void change(char *filename) {
 	pseloe(ev, size);
 	// User input
 	prompt(buf, 21, "Which event do you want to change? ");
-	int change_i = atoi(buf) - 1;
+	int del_i[1];
+	del_i[0] = atoi(buf) - 1;
 	// Read in the new time
 	read_time(buf, 21);
 	// Read message from stdin
@@ -21,9 +22,8 @@ void change(char *filename) {
 	if (rl == 512)
 		msg[rl - 2] = '\n';
 	// Write updates
-	ev[change_i].when = atol(buf);
-	strncpy(ev[change_i].text, msg, rl);
-	rm(filename, ev, size, NULL, 0);
+	rm(filename, ev, size, del_i, 1);
+	append(filename, buf, strlen(buf) - 1, msg, strlen(msg) - 1);
 	// Update all running instances
 	trigger_update(filename);
 }
