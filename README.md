@@ -35,6 +35,7 @@ Type `make`. To install, type `make install`.
 Run `scalp [filename]` to receive notifications. Other than that,
 
 - `scalp add [filename]` will start a prompt to add a new entry.
+- `scalp change [filename]` will start a prompt to change an existing entry.
 - `scalp del [filename]` will start a prompt to delete an existing entry.
 - `scalp help` will show a help message.
 - `scalp list [filename]` will provide a list of known entries.
