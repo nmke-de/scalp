@@ -2,6 +2,11 @@
 #include "Itoa/itoa.h"
 #include "scalp.h"
 
+// TODO do it differently.
+
+/*
+routine to change an existing entry. This is not final - I am not happy with the interface.
+*/
 void change(char *filename) {
 	int size = 0;
 	char buf[21];
