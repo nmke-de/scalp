@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include <fcntl.h>
 #include "scalp.h"
 

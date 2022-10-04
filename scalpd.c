@@ -1,6 +1,4 @@
-#include <unistd.h>
 #include <signal.h>
-#include <string.h>
 #include "scalp.h"
 
 // Packaged globals. Needed to be accessible for borth scalpd and the signal handlers.

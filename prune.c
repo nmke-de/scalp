@@ -1,5 +1,3 @@
-#include <unistd.h>
-#include <string.h>
 #include <fcntl.h>
 #include <alloca.h>
 #include "scalp.h"
