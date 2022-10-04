@@ -10,6 +10,8 @@ int read_time(char *buf, int max_bufsize) {
 	char tmp_time[64];
 	int pfd[2];
 	int rl;
+	// This is necessary to ensure that the loop actually loops if the input format is bad.
+	*buf = 0;
 	do {
 		// Get user input for time
 		print("Time: ");
