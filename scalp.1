@@ -11,6 +11,10 @@ add
 .OP FILENAME
 .YS
 .SY scalp
+change
+.OP FILENAME
+.YS
+.SY scalp
 del
 .OP FILENAME
 .YS
@@ -46,6 +50,10 @@ time arrives. The default filename is \fIfoo\fP.
 .TP
 .B add
 will prompt the user to enter a time and a message. The message must not be longer than 512 characters long, and the time format is described in \fIdate\fP(1).
+.TP
+.B change
+will prompt the user to give a number, which corresponds to the entry that the user wants to change. After that, the user is prompted to enter a time and a message. Same rules apply as with 
+.B scalp add.
 .TP
 .B del
 will prompt the user to give a number, which corresponds to the entry that the user wants to delete.
