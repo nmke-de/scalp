@@ -22,6 +22,8 @@ int main(int argc, char **argv) {
 			mode = help;
 		else if (strcmp(argv[1], "change") == 0)
 			mode = change;
+		else if (strcmp(argv[1], "move") == 0)
+			mode = move;
 		else
 			filename = argv[1];
 	}
