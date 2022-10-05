@@ -35,10 +35,11 @@ Type `make`. To install, type `make install`.
 Run `scalp [filename]` to receive notifications. Other than that,
 
 - `scalp add [filename]` will start a prompt to add a new entry.
-- `scalp change [filename]` will start a prompt to change an existing entry.
+- `scalp change [filename]` will start a prompt to change the message of an existing entry.
 - `scalp del [filename]` will start a prompt to delete an existing entry.
 - `scalp help` will show a help message.
 - `scalp list [filename]` will provide a list of known entries.
+- `scalp move [filename]` will start a prompt to change the time of an existing entry.
 - `scalp prune [filename]` will remove all entries older than now.
 - `scalp update` will triger an update on all running instances of scalp, if any.
 
