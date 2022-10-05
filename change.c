@@ -17,18 +17,17 @@ void change(char *filename) {
 	pseloe(ev, size);
 	// User input
 	prompt(buf, 21, "Which event do you want to change? ");
-	int del_i[1];
-	del_i[0] = atoi(buf) - 1;
-	// Read in the new time
-	read_time(buf, 21);
+	int i[1];
+	i[0] = atoi(buf) - 1;
 	// Read message from stdin
 	int rl = prompt(msg, 512, "Message: ");
 	// Check for overflow (and add a linefeed)
 	if (rl == 512)
 		msg[rl - 2] = '\n';
 	// Write updates
-	rm(filename, ev, size, del_i, 1);
-	append(filename, buf, strlen(buf) - 1, msg, strlen(msg) - 1);
+	rm(filename, ev, size, i, 1);
+	char *time = itoa(ev[*i].when, 10);
+	append(filename, time, strlen(time), msg, strlen(msg) - 1);
 	// Update all running instances
 	trigger_update(filename);
 }
