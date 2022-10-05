@@ -8,7 +8,6 @@ routine to move an existing appointment.
 void move(char *filename) {
 	int size = 0;
 	char buf[21];
-	char msg[512];
 	// Read file
 	event *ev = read_file(filename, NULL, &size);
 	// Print sorted enumerated list of events
