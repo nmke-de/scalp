@@ -36,6 +36,7 @@ Run `scalp [filename]` to receive notifications. Other than that,
 
 - `scalp add [filename]` will start a prompt to add a new entry.
 - `scalp change [filename]` will start a prompt to change the message of an existing entry.
+- `scalp copy [filename]` will start a prompt to copy an existing entry to a new time.
 - `scalp del [filename]` will start a prompt to delete an existing entry.
 - `scalp help` will show a help message.
 - `scalp list [filename]` will provide a list of known entries.

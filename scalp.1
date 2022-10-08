@@ -15,6 +15,10 @@ change
 .OP FILENAME
 .YS
 .SY scalp
+copy
+.OP FILENAME
+.YS
+.SY scalp
 del
 .OP FILENAME
 .YS
@@ -23,6 +27,10 @@ help
 .YS
 .SY scalp
 list
+.OP FILENAME
+.YS
+.SY scalp
+move
 .OP FILENAME
 .YS
 .SY scalp
@@ -53,6 +61,10 @@ will prompt the user to enter a time and a message. The message must not be long
 .TP
 .B change
 will prompt the user to give a number, which corresponds to the entry that the user wants to change. After that, the user is prompted to enter a new message. Same rules apply as with 
+.B scalp add.
+.TP
+.B copy
+will prompt the user to give a number, which corresponds to the entry that the user wants to copy. After that, the user is prompted to enter a new time for the copied event. Same rules apply as with
 .B scalp add.
 .TP
 .B del
