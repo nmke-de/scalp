@@ -24,6 +24,8 @@ int main(int argc, char **argv) {
 			mode = change;
 		else if (strcmp(argv[1], "move") == 0)
 			mode = move;
+		else if (strcmp(argv[1], "copy") == 0)
+			mode = copy;
 		else
 			filename = argv[1];
 	}
