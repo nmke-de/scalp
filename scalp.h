@@ -35,6 +35,7 @@ void prune(char *);
 void help(char *);
 void change(char *);
 void move(char *);
+void copy(char *);
 
 // Macros to make code more managable
 #define print(str) write(0, (str), strlen((str)))
