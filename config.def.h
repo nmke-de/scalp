@@ -11,4 +11,16 @@
 
 #define default_file "foo"
 
+// Uncomment to disable features
+// #define fno_add
+// #define fno_change
+// #define fno_copy
+// #define fno_del
+// #define fno_help
+// #define fno_list
+// #define fno_move
+// #define fno_prune
+// #define fno_update
+// #define fno_daemon
+
 #endif
