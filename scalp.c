@@ -1,10 +1,11 @@
 #include "scalp.h"
+#include "config.h"
 
 /*
 Entry point of the program (duh.)
 */
 int main(int argc, char **argv) {
-	char *filename = "foo";
+	char *filename = default_file;
 	// argparsing
 	void (*mode)(char *) = scalpd;
 	if (argc > 1) {
@@ -29,7 +30,7 @@ int main(int argc, char **argv) {
 		else
 			filename = argv[1];
 	}
-	if (argc > 2 && strcmp(filename, "foo") == 0)
+	if (argc > 2 && strcmp(filename, default_file) == 0)
 		filename = argv[2];
 	// Goto a routine according to the given subcommand.
 	mode(filename);
