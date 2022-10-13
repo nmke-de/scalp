@@ -26,7 +26,7 @@ The program is known to work on Artix Linux. Make sure to put your `libc.a` in `
 
 ## Build
 
-In order to fetch Itoa, type `git submodule update --remote` first.
+In order to fetch Itoa, type `git submodule update --init --remote` first. If you want to update this submodule, you need to type `git submodule update --remote` instead.
 
 Type `make`. To install, type `make install`.
 
