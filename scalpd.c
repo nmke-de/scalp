@@ -52,8 +52,10 @@ void scalpd(char *filename) {
 		// Check for each entry whether it is time to notify the user.
 		for (int i = 0; i < evlist.size; i++) {
 			for (int j = 0; j <= warnings; j++)
-				if (t == evlist.ev[i].when - _warns[j].when)
+				if (t == evlist.ev[i].when - _warns[j].when) {
 					notify_send(_warns[j].title, evlist.ev[i].text);
+					break;
+				}
 		}
 		// Run the loop each second. This is sufficient in my experience.
 		sleep(1);
