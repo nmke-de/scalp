@@ -36,9 +36,10 @@ routine to run the scalp daemon. Default mode, if no subcommand is given.
 */
 void scalpd(char *filename) {
 	time_t t = time(NULL);
-	// Read config
+	// Read config.h
+	notification _warns[] = warns;
 	int warnings = 0;
-	while (warns[warnings].when != 0)
+	while (_warns[warnings].when != 0)
 		++warnings;
 	// Read file
 	evlist.filename = filename;
@@ -51,8 +52,8 @@ void scalpd(char *filename) {
 		// Check for each entry whether it is time to notify the user.
 		for (int i = 0; i < evlist.size; i++) {
 			for (int j = 0; j <= warnings; j++)
-				if (t == evlist.ev[i].when - warns[j].when)
-					notify_send(warns[j].title, evlist.ev[i].text);
+				if (t == evlist.ev[i].when - _warns[j].when)
+					notify_send(_warns[j].title, evlist.ev[i].text);
 		}
 		// Run the loop each second. This is sufficient in my experience.
 		sleep(1);
