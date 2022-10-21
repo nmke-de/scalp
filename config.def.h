@@ -6,6 +6,12 @@
 // TODO use struct
 #define warn_time {86400, 3600, 600, 0}
 #define warn_title {"Tomorrow!", "In an hour!", "In ten minutes!", "NOW!"}
+notification warns[] = {
+	{86400, "Tomorrow!"},
+	{3600, "In an hour!"},
+	{600, "In ten minutes!"},
+	{0, "NOW!"},
+};
 
 #define notify_command {"notify-send", "-t", "300000", title, msg, NULL}
 
