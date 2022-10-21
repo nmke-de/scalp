@@ -15,6 +15,11 @@ typedef struct {
 	char text[MAX_EVENT_TEXT];
 } event;
 
+typedef struct {
+	time_t when;
+	char *title;
+} notification;
+
 void notify_send(char *, char *);
 event *read_file(const char *, event *, int *);
 int timecompare(const void *, const void *);
