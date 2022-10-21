@@ -26,7 +26,7 @@ int timecompare(const void *, const void *);
 int append(char *, char *, int, char *, int);
 int rm(char *, event *, int, int *, int);
 int read_time(char *, int);
-int prompt(char*, int, char *);
+int prompt(char *, int, char *);
 // Print Sorted Enumerated List Of Events
 void pseloe(event *, int);
 
