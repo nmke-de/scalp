@@ -3,15 +3,13 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// TODO use struct
-#define warn_time {86400, 3600, 600, 0}
-#define warn_title {"Tomorrow!", "In an hour!", "In ten minutes!", "NOW!"}
-notification warns[] = {
-	{86400, "Tomorrow!"},
-	{3600, "In an hour!"},
-	{600, "In ten minutes!"},
-	{0, "NOW!"},
-};
+// Configure warning/notification messages. First comes the number of seconds before the actual event, then the message title displayed. scalp expects this array to end on a warning with time 0.
+#define warns {\
+	{86400, "Tomorrow!"},\
+	{3600, "In an hour!"},\
+	{600, "In ten minutes!"},\
+	{0, "NOW!"},\
+}
 
 #define notify_command {"notify-send", "-t", "300000", title, msg, NULL}
 

@@ -1,5 +1,6 @@
 #include <signal.h>
 #include "scalp.h"
+#include "config.h"
 
 // Packaged globals. Needed to be accessible for borth scalpd and the signal handlers.
 static struct {
@@ -35,6 +36,10 @@ routine to run the scalp daemon. Default mode, if no subcommand is given.
 */
 void scalpd(char *filename) {
 	time_t t = time(NULL);
+	// Read config
+	int warnings = 0;
+	while (warns[warnings].when != 0)
+		++warnings;
 	// Read file
 	evlist.filename = filename;
 	evlist.ev = read_file(evlist.filename, NULL, &(evlist.size));
@@ -45,14 +50,9 @@ void scalpd(char *filename) {
 	for (;; t = time(NULL)) {
 		// Check for each entry whether it is time to notify the user.
 		for (int i = 0; i < evlist.size; i++) {
-			if (t == evlist.ev[i].when)
-				notify_send("NOW!", evlist.ev[i].text);
-			else if (t == evlist.ev[i].when - 600)
-				notify_send("In ten minutes!", evlist.ev[i].text);
-			else if (t == evlist.ev[i].when - 3600)
-				notify_send("In an hour!", evlist.ev[i].text);
-			else if (t == evlist.ev[i].when - 86400)
-				notify_send("Tomorrow!", evlist.ev[i].text);
+			for (int j = 0; j <= warnings; j++)
+				if (t == evlist.ev[i].when - warns[j].when)
+					notify_send(warns[j].title, evlist.ev[i].text);
 		}
 		// Run the loop each second. This is sufficient in my experience.
 		sleep(1);
