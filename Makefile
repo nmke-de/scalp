@@ -16,6 +16,8 @@ config.h: config.def.h
 	cp -i config.def.h config.h
 	@echo "To change the configuration, edit config.h"
 
+config: config.h
+
 scalp.o test/test.o $(objects): %.o: %.c $(headers)
 
 scalp: $(mobj) $(LIBC)
@@ -32,6 +34,6 @@ install: scalp
 	install scalp /usr/bin/
 	install scalp.1 /usr/share/man/man1/
 
-.PHONY: build check install clean
+.PHONY: config build check install clean
 
 all: build check install clean
