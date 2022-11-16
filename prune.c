@@ -12,7 +12,6 @@ removes all entries in filename which are older than now.
 */
 void prune(char *filename) {
 	int size = 0, ptr = 0;
-	char buf[21];
 	// Read file
 	event *ev = read_file(filename, NULL, &size);
 	// Get all outdated entries

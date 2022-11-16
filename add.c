@@ -6,7 +6,6 @@ routine to add an entry to filename.
 */
 void add(char *filename) {
 	char msg[512];
-	char tmp_time[64];
 	// Read time from stdin. Repeat if format is bad.
 	char buf[21];
 	read_time(buf, 21);
