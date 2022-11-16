@@ -5,6 +5,7 @@ headers = scalp.h config.h
 mobj = scalp.o $(obj)
 tobj = test/test.o $(obj)
 
+CFLAGS += -Wall
 LDFLAGS += -static -s -z norelro -z noseparate-code
 
 build: scalp
