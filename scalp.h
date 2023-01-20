@@ -41,6 +41,7 @@ void help(char *);
 void change(char *);
 void move(char *);
 void copy(char *);
+void repeat(char *);
 
 // Macros to make code more managable
 #define print(str) write(0, (str), strlen((str)))

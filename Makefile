@@ -1,6 +1,6 @@
 
 LIBC = /usr/lib/libc.a
-obj  = read_file.o notify_send.o scalpd.o list.o timecompare.o add.o trigger_update.o del.o rm.o append.o prune.o help.o read_time.o prompt.o pseloe.o change.o move.o copy.o Itoa/itoa.o
+obj  = read_file.o notify_send.o scalpd.o list.o timecompare.o add.o trigger_update.o del.o rm.o append.o prune.o help.o read_time.o prompt.o pseloe.o change.o move.o copy.o repeat.o Itoa/itoa.o
 headers = scalp.h config.h
 mobj = scalp.o $(obj)
 tobj = test/test.o $(obj)
