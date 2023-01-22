@@ -45,7 +45,7 @@ void repeat(char *filename) {
 	read_time(buf, 21);
 	time_t stop = atoi(buf);
 	// Add new events
-	struct tm* t_broken_down = (struct tm*)0;
+	struct tm *t_broken_down = (struct tm *)0;
 	for (time_t t = ev[i].when + interval; t <= stop; t += interval) {
 		t_broken_down = gmtime(&t);
 		if ((mode == 'Y' || mode == 'y') && isleap(t_broken_down->tm_year))
