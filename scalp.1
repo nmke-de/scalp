@@ -38,6 +38,10 @@ prune
 .OP FILENAME
 .YS
 .SY scalp
+repeat
+.OP FILENAME
+.YS
+.SY scalp
 update
 .YS
 .SH DESCRIPTION
@@ -82,6 +86,9 @@ will prompt the user to give a number, which corresponds to the entry that the u
 .TP
 .B prune
 will remove all entries older than now.
+.TP
+.B repeat
+will prompt the user to give a number, which corresponds to the that the user wants to copy repeatedly. After that, the user is prompted with the interval (yearly, monthly, weekly, daily) and a time when the program is supposed to stop repeat the entry.
 .TP
 .B update
 will update all running instances of scalp. This means that all instances of scalp running in daemon mode will reload their source file and then continue.

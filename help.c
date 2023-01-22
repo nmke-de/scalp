@@ -16,6 +16,7 @@ Running scalp without subcommand starts the daemon to notify you.\n\
 	list\tlist all entries\n\
 	move\tmove an entry (to a new date)\n\
 	prune\tremove all old entries\n\
+	repeat\trepeatedly copy an existing entry in regular intervals\n\
 	update\tupdate all running instances\n";
 	print(helpmsg);
 }
