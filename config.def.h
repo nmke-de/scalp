@@ -24,6 +24,7 @@
 // #define fno_list
 // #define fno_move
 // #define fno_prune
+// #define fno_repeat
 // #define fno_update
 // #define fno_daemon
 

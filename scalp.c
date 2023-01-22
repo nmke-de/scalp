@@ -58,8 +58,10 @@ int main(int argc, char **argv) {
 			mode = copy;
 		else
 #endif
+#ifndef fno_repeat
 			if (strcmp(argv[1], "repeat") == 0)
 			mode = repeat;
+#endif
 		else
 			filename = argv[1];
 	}
