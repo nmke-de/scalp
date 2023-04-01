@@ -2,8 +2,6 @@
 #include "Itoa/itoa.h"
 #include "scalp.h"
 
-#define isleap(y) (!(y % 400) || (!!(y % 100) && !(y % 4)))
-
 /*
 routine to repeat an existing entry in regular intervals (daily, weekly, monthly, yearly)
 */
