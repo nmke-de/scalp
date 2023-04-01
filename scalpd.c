@@ -47,6 +47,7 @@ void scalpd(char *filename) {
 	// Set up signal handlers
 	signal(SIGUSR1, sig_handle);
 	signal(SIGUSR2, sig2_handle);
+	signal(SIGCHLD, SIG_IGN);
 	// Main loop
 	for (;; t = time(NULL)) {
 		// Check for each entry whether it is time to notify the user.
