@@ -1,9 +1,9 @@
 
 LIBC = /opt/diet/lib-x86_64/libc.a
-obj  = read_file.o notify_send.o scalpd.o list.o timecompare.o add.o trigger_update.o del.o rm.o append.o prune.o help.o read_time.o prompt.o pseloe.o change.o move.o copy.o repeat.o Itoa/itoa.o
-headers = scalp.h config.h
-mobj = scalp.o $(obj)
-tobj = test/test.o $(obj)
+obj  = $(patsubst src/%.c,%.o,$(wildcard src/*.c))
+headers = src/scalp.h config.h
+mobj = scalp.o itoa.o $(obj)
+tobj = test/test.o itoa.o $(obj)
 
 CFLAGS += -Wall
 LDFLAGS += -static -s -z norelro -z noseparate-code
@@ -19,9 +19,15 @@ config.h: config.def.h
 
 config: config.h
 
-scalp.o test/test.o $(objects): %.o: %.c $(headers)
+itoa.o: src/Itoa
+	make -C src/Itoa
+	ln -f src/Itoa/itoa.o itoa.o
+
+scalp.o test/test.o $(obj): %.o: src/%.c $(headers)
+	$(CC) -c -o $@ $<
 
 scalp: $(mobj) $(LIBC)
+	@echo $(obj)
 	ld $(LDFLAGS) -o $@ $^
 
 test/test: $(tobj) $(LIBC)

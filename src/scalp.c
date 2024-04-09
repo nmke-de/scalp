@@ -1,5 +1,5 @@
 #include "scalp.h"
-#include "config.h"
+#include "../config.h"
 
 /*
 Entry point of the program (duh.)

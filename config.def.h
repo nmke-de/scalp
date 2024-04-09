@@ -1,4 +1,4 @@
-#include "scalp.h"
+#include "src/scalp.h"
 
 #ifndef CONFIG_H
 #define CONFIG_H

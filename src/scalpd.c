@@ -1,6 +1,6 @@
 #include <signal.h>
 #include "scalp.h"
-#include "config.h"
+#include "../config.h"
 
 // Packaged globals. Needed to be accessible for borth scalpd and the signal handlers.
 static struct {
