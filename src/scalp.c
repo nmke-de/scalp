@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 		else
 #endif
 #ifndef fno_repeat
-			if (strcmp(argv[1], "repeat") == 0)
+		    if (strcmp(argv[1], "repeat") == 0)
 			mode = repeat;
 #endif
 		else

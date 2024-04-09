@@ -62,7 +62,7 @@ void repeat(char *filename) {
 				t = mktime(t_broken_down) + 3600;
 			}
 			// Temporary solution to the DST problem. Not exactly correct, but I can't be bothered
-			// with implementing a correct DST solution for scalp at 10pm. I did'nt like DST before, 
+			// with implementing a correct DST solution for scalp at 10pm. I did'nt like DST before,
 			// but now this is becoming a personal vendetta against DST.
 			if (t_broken_down->tm_mon > 3 && t_broken_down->tm_mon < 11)
 				t += 3600;
