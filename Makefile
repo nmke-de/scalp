@@ -1,12 +1,14 @@
 
-LIBC = /opt/diet/lib-x86_64/libc.a
+LIBC ?= /opt/diet/lib-x86_64/libc.a
 obj  = $(patsubst src/%.c,%.o,$(wildcard src/*.c))
 headers = src/scalp.h config.h
 mobj = scalp.o itoa.o $(obj)
 tobj = test/test.o itoa.o $(obj)
 
 CFLAGS += -Wall
-LDFLAGS += -static -s -z norelro -z noseparate-code
+LDFLAGS ?= -static
+LDFLAGS += -s -z norelro -z noseparate-code
+LD ?= ld
 
 build: scalp
 
@@ -28,10 +30,10 @@ scalp.o test/test.o $(obj): %.o: src/%.c $(headers)
 
 scalp: $(mobj) $(LIBC)
 	@echo $(obj)
-	ld $(LDFLAGS) -o $@ $^
+	$(LD) $(LDFLAGS) -o $@ $^
 
 test/test: $(tobj) $(LIBC)
-	ld $(LDFLAGS) -o $@ $^
+	$(LD) $(LDFLAGS) -o $@ $^
 
 clean:
 	rm -f scalp test/test *.o test/*.o Itoa/itoa.o

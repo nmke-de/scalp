@@ -28,6 +28,12 @@ The program is known to work on Artix Linux. Make sure to put your `libc.a` in `
 
 In order to fetch Itoa, type `git submodule update --init --remote` first. If you want to update this submodule, you need to type `git submodule update --remote` instead.
 
+In order to link against the default libc on your system instead of dietlibc, set the following environment variables like this:
+
+- `LIBC=-lc`
+- `LDFLAGS=''`
+- `LD=cc`
+
 Type `make`. To install, type `make install`.
 
 ## Usage
