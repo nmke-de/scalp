@@ -25,7 +25,7 @@ itoa.o: src/Itoa
 	make -C src/Itoa
 	ln -f src/Itoa/itoa.o itoa.o
 
-scalp.o test/test.o $(obj): %.o: src/%.c $(headers)
+test/test.o $(obj): %.o: src/%.c $(headers)
 	$(CC) -c -o $@ $<
 
 scalp: $(mobj) $(LIBC)
