@@ -2,7 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "../scalp.h"
+#include "../src/scalp.h"
 
 void test_read_file_1() {
 	int size;

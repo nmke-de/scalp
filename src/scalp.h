@@ -27,6 +27,7 @@ int append(char *, char *, int, char *, int);
 int rm(char *, event *, int, int *, int);
 int read_time(char *, int);
 int prompt(char *, int, char *);
+const char *getenv_default(const char *, const char *);
 // Print Sorted Enumerated List Of Events
 void pseloe(event *, int);
 

@@ -5,7 +5,7 @@
 Entry point of the program (duh.)
 */
 int main(int argc, char **argv) {
-	char *filename = default_file;
+	char *filename = (char *) getenv_default("CALF", default_file);
 	// argparsing
 #ifndef fno_daemon
 	void (*mode)(char *) = scalpd;
