@@ -140,6 +140,11 @@ To update all instances of scalp (which is only necessary if you edit any files 
 .EX
 $ scalp update
 .EE
+.SH ENVIRONMENT
+A default foofile can be set by setting the CALF environment variable.
+.EX
+export CALF=$HOME/foo
+.EE
 .SH FILE FORMAT
 Each line contains a number, representing the number of seconds since Unix Epoch
 (1st Jan 1970 12am UTC), a separating character (usually a tab, never a digit or a newline)
