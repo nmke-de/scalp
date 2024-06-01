@@ -38,10 +38,7 @@ int read_time(char *buf, int max_bufsize) {
 		fcntl(pfd[0], F_SETFD, FD_CLOEXEC);
 		// Read input from *pfd
 		int i = 0;
-		do {
-			read(*pfd, buf + i, 1);
-			++i;
-		} while (buf[i] != -1 && i < max_bufsize);
+		read(*pfd, buf, max_bufsize);
 		close(*pfd);
 		if (*buf == 'W') {
 			// Only executed if something is wrong with `date`.
